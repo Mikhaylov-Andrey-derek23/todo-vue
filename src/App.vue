@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    
+    <h1>Todo applacation</h1>
+    <hr>
+    <ToDoList/>
   </div>
 </template>
 
 <script>
 
-
+import ToDoList from "@/components/toDoList";
 export default {
   name: 'App',
   components: {
-    
+    ToDoList
   }
 }
 </script>
