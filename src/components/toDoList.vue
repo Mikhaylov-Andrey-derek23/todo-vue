@@ -4,6 +4,8 @@
             <listItem 
                 v-for="(todo, index) in todos" :key="index"
                 v-bind:todo = "todo"
+                v-bind:index = "index"
+                v-on:remove-todo = "remove" 
             />
         </uL>
     </div>
@@ -16,10 +18,20 @@
         props:  ['todos'],
         components: {
            listItem 
+        },
+        methods : {
+            remove(id){
+                this.$emit('remove-todo', id) 
+            }
         }
     }
+
 </script>
 
-<style>
-
+<style scoped>
+    ul{
+        list-style : none;
+        margin: 0px;
+        padding : 0px;
+    }
 </style>
